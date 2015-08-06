@@ -1,0 +1,26 @@
+{
+  "name": "popups",
+  "title": "Popups",
+  "description": "A plugin of jquery which used for popups.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/uniquetree/jquery-popups",
+  "author": {
+    "name": "郑树聪",
+    "email": "zhengsc1993@gmail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uniquetree/jquery-popups.git"
+  },
+  "bugs": "https://github.com/uniquetree/jquery-popups/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/uniquetree/jquery-popups/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

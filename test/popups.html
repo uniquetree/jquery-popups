@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Popups Test Suite</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  <!-- Load local QUnit. -->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+  <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/jquery.popups.js"></script>
+  <script src="popups_test.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+
+  <link rel="stylesheet" href="popups.css">
+
+  <style>
+    input[type="button"] {
+      display: block;
+      color: #FFFFFF;
+      width: 100px;
+      height: 68px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0F83C7;
+    }
+    input[type="button"]:active {
+      box-shadow: inset #000 0px 0px 6px;
+    }
+
+    .tan {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .window {
+      display: none;
+      width: 400px;
+      height: 240px;
+      background-color: #fff;
+      border: 2px solid red;
+    }
+    .window .tan .close {
+      position: relative;
+      width: 100%;
+      height: 50px;
+    }
+    .window .tan .close .close-img {
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+    .window .tan .text {
+      font-size: 24px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .window .tan .btn {
+      font-size: 28px;
+      width: 100%;
+      margin: 40px auto;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <span>lame test markup</span>
+    <span>normal test markup</span>
+    <span>awesome test markup</span>
+  </div>
+
+  <!-- 弹窗 -->
+  <div id="window" class="window">
+    <div class="tan">
+      <div class="close" id="close">
+        <img class="close-img" src="close.jpg" height="21" width="21" alt="">
+      </div>
+      <div class="text">
+        <p>你好，我是弹窗！</p>
+      </div>
+      <input id="btn2" class="btn" type="button" value="确定">
+    </div>
+  </div><!-- 弹窗 end -->
+</body>
+</html>
