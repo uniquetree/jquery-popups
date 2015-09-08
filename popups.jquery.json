@@ -2,7 +2,7 @@
   "name": "popups",
   "title": "Popups",
   "description": "A plugin of jquery which used for popups.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/uniquetree/jquery-popups",
   "author": {
     "name": "郑树聪",

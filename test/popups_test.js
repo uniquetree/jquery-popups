@@ -24,13 +24,22 @@
     // This will run before each test in this module.
     setup: function() {
       this.elem = $('#window');
+      this
     }
   });
 
   test('实现弹窗', function() {
-    expect(1);
-    // Not a bad test to run on collection methods.
-    ok(this.elem.popups(),  '弹出弹窗');
+    expect(2);
+    strictEqual(this.elem.popups('openPopups'), undefined, '弹出弹窗');
+    strictEqual(this.elem.popups('closePopups'), undefined, '关闭弹窗');
   });
+
+  // $('#close').click(function(event){
+  //   test('关闭弹窗', function() {
+  //     expect(1);
+  //     // strictEqual(this.elem.popups('openPopups'), undefined, '弹出弹窗');
+  //     strictEqual(this.elem.popups('closePopups'), undefined, '关闭弹窗');
+  //   });
+  // });
 
 }(jQuery));

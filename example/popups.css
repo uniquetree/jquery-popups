@@ -1,0 +1,24 @@
+*html{
+  background-image:url(about:blank);
+  background-attachment:fixed;
+}
+
+/*遮罩层的样式代码*/
+#zhezhao {
+  width: 100%;
+  height: 100%;
+  _width: expression(eval(document.documentElement.clientWidth));
+  _height: expression(eval(document.documentElement.clientHeight));
+  position: fixed;
+  left: 0;
+  top: 0;
+  _position:absolute;
+  _bottom:auto;
+  _top:expression(eval(document.documentElement.scrollTop));
+  z-index: 500;
+  background-color: #333;
+  filter: alpha(opacity=40);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.4;
+}

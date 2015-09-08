@@ -8,11 +8,10 @@
 
 (function($) {
 
-  $.fn.popups = function(options) {
-    // 将defaults 和 options 参数合并到{}
-    options = $.extend({}, $.fn.popups.defaults, options);
+  var methods = {
 
-    return this.each(function() {
+    //默认操作为弹出窗口
+    openPopups: function () {
       //遮罩层
       $(this).before('<div id=\"zhezhao\"></div>');
 
@@ -27,28 +26,39 @@
       popY = (windowHeight - popHeight) / 2;
       popX = (windowWidth - popWidth) / 2;
 
-      //设定窗口的位置
+      //设定窗口的居中弹出显示
       $(this).css({
         position: 'fixed',
         zIndex: '9999',
         top: popY,
         left: popX
       }).show();
+    },
+    closePopups: function (){
 
-      var that=$(this);
+      $(this).hide();
+      $(this).siblings('#zhezhao').hide();
+    }
+  }
 
-      $('body').on('click', options.close, function(event) {
-        event.preventDefault();
-        that.hide();
-        that.siblings('#zhezhao').hide();
-      });
-    });
-    // each end
+  $.fn.popups = function(method,options) {
+    // 将defaults 和 options 参数合并到{}
+    options = $.extend({}, $.fn.popups.defaults, options);
+
+    // 方法调用
+    console.log(arguments);
+    if (methods[method]) {
+        return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method) {
+        return methods.openPopups.apply(this, arguments);
+    } else {
+        $.error('Method' + method + 'does not exist on jQuery.popups');
+    }
   };
 
   //定义默认
   $.fn.popups.defaults = {
-    close: $('#close')
+    a:1
   };
 
 }(jQuery));

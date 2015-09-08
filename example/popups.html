@@ -5,18 +5,11 @@
   <title>Popups Test Suite</title>
   <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
   <script src="../libs/jquery-loader.js"></script>
-  <!-- Load local QUnit. -->
-  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
-  <script src="../libs/qunit/qunit.js"></script>
-  <!-- Load local lib and tests. -->
-  <script src="../src/jquery.popups.js"></script>
-  <script src="popups_test.js"></script>
-  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
-       you REALLY want to mess around with jQuery in the console. REMEMBER WE
-       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
-  <script>window._$ = jQuery.noConflict(true);</script>
 
   <link rel="stylesheet" href="popups.css">
+
+  <script src="../src/jquery.popups.js"></script>
+  <script src="popups_test.js"></script>
 
   <style>
     input[type="button"] {
@@ -64,20 +57,12 @@
       width: 100%;
       margin: 40px auto;
     }
-
-    /*#window {
-      visibility: hidden;
-    }*/
   </style>
 
 </head>
 <body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
-  </div>
+
+  <button id="btn">弹窗</button>
 
   <!-- 弹窗 -->
   <div id="window" class="window">
